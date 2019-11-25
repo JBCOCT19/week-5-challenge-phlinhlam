@@ -22,6 +22,7 @@
                 <th>Date Posted</th>
                 <th>Author</th>
                 <th>Phone</th>
+                <th>Photo</th>
             </tr>
             <tr th:each="job : ${jobs}">
                 <td style="text-align: center" th:text="${job.title}"></td>
@@ -29,10 +30,16 @@
                 <td style="text-align: center" th:text="${job.postedDate}"></td>
                 <td style="text-align: center" th:text="${job.author}"></td>
                 <td style="text-align: center" th:text="${job.phone}"></td>
+                <td th:text="${job.photo}">
+                    <div th:if="${job.photo} !=null">
+                        <img th:src="${job.photo}" /> <hr />
+                    </div>
+                </td>
                 <td>
                     <a th:href="@{/update/{id}(id=${job.id})}">Update</a>
                     <a th:href="@{/detail/{id}(id=${job.id})}">Detail</a>
                     <a th:href="@{/delete/{id}(id=${job.id})}">Delete</a>
+
                 </td>
             </tr>
 

@@ -18,8 +18,9 @@
         Date Posted : <span th:text="${job.postedDate}"></span><br />
         Author : <span th:text="${job.author}"></span><br />
         Phone : <span th:text="${job.phone}"></span><br />
-
+        <!--Photo : <span th:text="${job.photo}"></span><br />-->
         <a th:href="@{/delete/{id}(id=${job.id})}">Delete this job</a>
+        <!--<a th:href="@{/addPhoto/{id}(id=${job.id})}">Add a Photo</a>-->
         <br />
         <br />
         <br />

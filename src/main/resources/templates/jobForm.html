@@ -11,10 +11,10 @@
 <div th:replace="base :: navlinks"></div>
 <div class="container" style="color: #63737d; margin-top: 10px">
     <div class="jumbotron">
-        <h1 style="color: #4b8f95">Flight Management</h1>
+        <h1 style="color: #4b8f95">Job Management</h1>
         <br />
 
-        <form action="#" th:action="@{/process}" th:object="${job}" method="post">
+        <form action="#" th:action="@{/process}" th:object="${job}" method="post" enctype="multipart/form-data">
             <input type="hidden" th:field="*{id}" />
 
             <div class="form-group row">
@@ -60,7 +60,14 @@
                           th:errors="*{phone}"></span><br />
                 </div>
             </div>
-            <input type="submit" class="btn btn-info" value="Add a Job"/>
+<!--
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Upload a photo</label>
+                    <input type="file" name="file" /><br /><br />
+                </div>
+-->
+         <input type="submit" class="btn btn-info" value="Add a Job"/>
+
         </form>
     </div>
 </div>
